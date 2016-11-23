@@ -1,0 +1,8 @@
+
+<!-- issue.status in the next line plus .html is a pointer to a template in the views/graphs folder, when
+  a link in views/verticalNav.html is clicked, the link sends a $stateParam to the url, as in 'ui-sref="skills.demos({id:'pieChart'})'  and based on the string value
+  of this $stateParam.id, which in this example is = pieChart, in the scope, scope which right now is skillsdemo-controller.js, issue.status would point to different templates ie, to the current id as $stateParam.id
+  in the url. In short, graph.status reads it's value from the url and then evaluates the name of the html file to be ng-included. -->
+
+<div class="skills-styles" ng-include="'pages/mainPages/skills/demos/graphs/' + graph.type + '.html'"></div>  <!-- Note! This is where all the graphs are displayed ! -->
+

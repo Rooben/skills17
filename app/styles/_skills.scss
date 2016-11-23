@@ -1,0 +1,162 @@
+.skills-styles {
+  .highcharts-container{
+    overflow: visible !important;
+  }
+  .btn-default:hover {
+    color: #000000;
+    border-style: solid;
+    @include linGradient(#d1d1d1, 0%, #7f7f7f, 14%, #f4f4f4, 88%, #ffffff, 91%, #596a72, 100%);
+  }
+
+  .skillsAccordion {
+    font-size: 1.3em;
+    padding: 5px 0;
+    border-style: solid;
+    border-color: #666666;
+    @include linGradient(rgb(238, 238, 238), 0%, rgb(238, 238, 238), 5%,  rgb(238, 238, 238), 10%, rgba(204, 204, 204, 1), 90%, rgba(204, 204, 204, 1), 100%);
+  }
+  .panel-primary > .panel-heading {
+    color: #ffffff;
+    background-color: #428bca;
+    border-color: #428bca;
+  }
+  .skillsHeader {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .panel-body {
+    padding: 0 5px;
+    background-color: #dadeb8;
+    width: 92%;
+    margin: 0 auto 5px auto;
+    font-size: 1.2em;
+    line-height: 2em;
+    font-family: 'Marmelad', sans-serif;
+    li {
+      list-style-type: circle;
+    }
+  }
+  .panel-group .panel {
+    margin-top: 2px;
+  }
+
+  .hideElem {
+    display: none;
+  }
+
+
+    padding: 0 5px;
+    /************************  Table Styles  ****************************/
+    table {
+      width: 100%;
+      margin-bottom: 30px;
+      caption {
+        font-size: 1.4em;
+        font-weight: bold;
+        font-family: Marmelad, sans-serif;
+        text-align: center;
+      }
+    }
+
+
+    table.demoTable caption,   table.demoTable2 caption{
+      padding-bottom: 2px;
+      font-weight: bold;
+      font-family: Marmelad, sans-serif;
+      text-align: center;
+      color: black;
+      font-size: 14px;
+      @include linGradient(#7f6300, 0%, #ffffff, 9%, #7f6300, 20%, #ffffff, 91%, #7a5d00, 100%);
+    }
+
+
+    table.demoTable {
+      font-family: verdana, arial, sans-serif;
+      font-size: 13px;
+      color: #333333;
+      border-width: 1px;
+      border-color: #666666;
+      border-collapse: collapse;
+    }
+    //**********************************************
+    table.demoTable th{
+      border-width: 1px;
+      padding: 3px;
+      border-style: solid;
+      border-color: #666666;
+      @include linGradient(rgb(225, 255, 255), 7%, rgba(225, 255, 255, 1), 12%, rgba(230, 248, 253, 1), 30%,
+        rgba(200, 238, 251, 1), 54%, rgba(190, 228, 248, 1), 75%);
+    }
+
+    table.demoTable td, table.demoTable2 td {
+      border-width: 1px;
+      padding: 4px;
+      border-style: solid;
+      border-color: #666666;
+      @include linGradient(rgb(242, 245, 246), 0%, rgba(200, 215, 220, 1), 68%, rgba(200, 215, 220, 1),
+        80%, rgba(200, 215, 220, 1), 90%, rgba(200, 215, 220, 1), 40%);
+    }
+
+    table.demoTable2 th {
+      border-width: 1px;
+      padding: 3px;
+      border-style: solid;
+      border-color: #666666;
+
+      @include linGradient(rgba(247, 47, 12, 1), 0%, rgba(234, 163, 157, 1), 14%,
+        rgba(229, 174, 169, 1), 74%, rgba(229, 174, 169, 1), 83%, rgba(240, 47, 23, 1), 95%);
+    }
+
+    //  /************************ End of Table Styles  **********************/
+    //*************************************
+    .contents_explanation2 {
+      border: solid 1px #979797;
+      font-size: 18px;
+      min-height: 145px;
+      padding: 5px;
+      margin-bottom: 5px;
+      h4 {
+        font-size: 1.2em;
+        text-align: center;
+      }
+      p {
+        font-size: 1.2em;
+      }
+    }
+
+    //*********************************
+
+    /* Responsive: Portrait tablets and up */
+    @media screen and (min-width: 768px) {
+        padding: 0 5px;
+        /************************  Table Style  ****************************/
+        table {
+          width: 100%;
+          margin-bottom: 30px;
+          caption {
+            font-size: 14px;
+            font-weight: normal;
+            font-family: Marvel, serif;
+            text-align: center;
+          }
+        }
+        table.demoTable caption {
+          font-size: 11px;
+        }
+        table.demoTable {
+          font-size: 11px;
+        }
+        //  /************************ End of Table Styles  **********************/
+
+        div.contents_explanation2 {
+          margin-left: 4px;
+          h4 {
+            font-size: 14px;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+}

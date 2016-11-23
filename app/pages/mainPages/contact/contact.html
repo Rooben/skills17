@@ -1,0 +1,77 @@
+<div class="contactContainer col-md-12">
+
+
+ <div class="contactDecor">
+  <div class="col-xs-12">
+    <div class="directContacts">
+      <!-- Loader spinner -->
+      <div id="contactFeedbackContainer">
+        <span id="feedbkLoader"></span>
+        <span id="feedbkText"></span>
+      </div>
+      <!-- Image with contacts -->
+      <img class="contact-card" ng-src="images/contact.png" alt="Image with contacts"/>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="contactForm"><!-- Contact form begins -->
+        <form id="contactFrm" name="contactFrm" action="#" method="POST"  role="form">
+
+          <div class="formItem">
+            <label class="contactFormL" for="contFormfname">First Name<span class="req_star">*</span> </label>
+            <input type="text" required="true" class="form-control contact_inpt pureText" id="con_fname"  maxlength="25" placeholder="First Name"><span class="remaining"></span>
+          </div>
+
+
+          <div class="formItem">
+            <label class="contactFormL" for="contFormlname">Last Name<span class="req_star">*</span> </label>
+            <input type="text" required="true" class="form-control contact_inpt pureText" id="con_lname"  maxlength="25" placeholder="Last Name"><span class="remaining"></span>
+          </div>
+
+
+          <div class="formItem">
+            <label class="contactFormL" for="con_email">Email<span class="req_star">*</span> </label>
+            <input type="email" required="true" class="form-control contact_inpt pureEmail" id="con_email" name="con_email"  maxlength="40" placeholder="Email"><span class="remaining"></span>
+          </div>
+
+          <div class="formItem">
+            <label class="contactFormL" for="contFormMessage">Message<span class="req_star">*</span> </label>
+            <textarea required="true" class="form-control contact_inpt  pureComment" id="con_message" maxlength="200" rows="5" placeholder="Message"></textarea><span class="remaining"></span>
+          </div>
+
+          <div id="spamControl" class="spamControl col-xs-12">
+            <label class="col-xs-4" for="url">Leave this empty</label>
+            <div class="col-xs-8">
+              <input type="text" name="url"  maxlength="25" >
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <button type="submit" id="contact_submit" class="btn btn-default">Submit</button>
+            <button type="reset"  class="btn btn-primary">Reset</button>
+          </div>
+        </form>
+
+      </div><!-- Contact form ends -->
+    </div>
+  </div>
+
+
+  <!-- spinning loader setting for the contact page -->
+  <script type="text/javascript">
+    var contactFback = new CanvasLoader('feedbkLoader');
+    contactFback.setColor('#004800'); // default is '#000000'
+    contactFback.setDiameter(40); // default is 40
+    contactFback.setDensity(12); // default is 40
+    contactFback.setRange(.7); // default is 1.3
+    contactFback.setSpeed(1); // default is 2
+    contactFback.setFPS(30); // default is 24
+    contactFback.show(); // Hidden by default
+  </script>
+
+</div>
+
+
+
+

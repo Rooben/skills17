@@ -1,0 +1,463 @@
+
+// bower:scss
+// endbower
+$lighterGray : #e2e3e7;
+$darkerGray: #D7D7D7;
+$grayBorderBlend: rgb(203, 203, 203);
+$borderRadius5: 5px;
+$borderRadius7: 7px;
+$borderRadius10: 10px;
+
+// mixin for the caption text in the data tables in the skills pages.
+@mixin linGradient($color1, $percent1, $color2, $percent2, $color3, $percent3, $color4, $percent4, $color5, $percent5){
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($percent1, $color1), color-stop($percent2, $color2),
+    color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* IE10+ */
+  background: linear-gradient(to bottom, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* W3C */
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0); /* IE6-9 */
+}
+
+// Mixin for more complex linear gradients
+@mixin complexLinGradient($color1, $percent1, $color2, $percent2, $color3, $percent3, $color4, $percent4, $color5, $percent5, $color6, $percent6, $color7, $percent7, $color8, $percent8){
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($percent1, $color1), color-stop($percent2, $color2),
+    color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5), color-stop($percent6, $color6), color-stop($percent7, $color7), color-stop($percent8, $color8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5,  $color6 $percent6, $color7 $percent7, $color8 $percent8); /* IE10+ */
+  background: linear-gradient(to bottom, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5,  $color6 $percent6, $color7 $percent7, $color8 $percent8); /* W3C */
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0); /* IE6-9 */
+}
+
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+//Give a responsive height to all the DOM containers in all the devices.
+html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron{
+  height: 100%;
+}
+.mainBlock{
+  height: 85%; //.mainBlock,
+}
+
+
+body {
+  padding: 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  //font-family: Marvel, sans-serif;
+  font-family: 'Josefin Slab', serif;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.ng-scope{
+  //padding-top: 2px;
+}
+
+/* Custom page footer */
+.footer {
+  position: relative;
+  color: #777;
+  border-top: 1px solid #e4e4e4;
+
+  .footerCopyRight{
+    text-align: center;
+    margin: 5px 0 0 0;
+    padding: 20px 0;
+    border-radius: $borderRadius7;
+    @include linGradient(rgb(238, 238, 238), 0%, rgb(238, 238, 238), 14%, rgba(204, 204, 204, 1),
+      88%, rgba(204, 204, 204, 1), 91%, rgba(204, 204, 204, 1), 100%);
+  }
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+/* Remove the padding set earlier */
+.header,
+.footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Space out the masthead */
+.header {
+  margin-bottom: 5px;
+}
+/* Remove the bottom border on the jumbotron for visual effect */
+.jumbotron {
+  border-bottom: 0;
+}
+
+.logo{
+  display: none;
+}
+
+
+h1, h2, h3, h4, h5{
+  font-family: Marmelad, sans-serif;
+}
+
+.vertNav{
+  margin: 15px 0;
+}
+
+
+.spinnerContainer{
+  position: absolute;
+  left: 40%;
+  top:500%;
+  z-index: 1000;
+}
+
+
+
+  .currentPage{
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    top: 13px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+.horizontalNavBar {
+  margin-bottom: 6px;
+  border-radius: $borderRadius5;
+  @include linGradient(rgb(238, 238, 238), 0%, rgb(238, 238, 238), 14%, rgba(204, 204, 204, 1),
+    88%, rgba(204, 204, 204, 1), 91%, rgba(204, 204, 204, 1), 100%);
+
+  .mobileMainMenu{
+    float: right;
+    margin: 2px 15px;
+    cursor: pointer;
+  }
+  .demoMenu{
+    display: none;
+    float: left;
+    margin: 2px 15px;
+    cursor: pointer;
+  }
+  .demoLabel{
+    position: absolute;
+    background-color: #d9d1b5;
+    border: solid 1px #a78101;
+    padding: 4px 2px 0 2px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: $borderRadius5;
+    top: 11px;
+    left: 17px;
+  }
+
+  .nav {
+    //********************
+    display: none;
+    height: 0;
+    width: 304px;
+    // background-color: #e1e2e6;
+    border: solid 1px #cccccc;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    top: -12px;
+    left: 50%;
+    margin-left: -153px;
+    padding: 2px;
+    background-color: #9d9d9d;
+    margin-bottom: 6px !important;
+    color: red;
+
+    li {
+      width: 100%;
+      text-align: center;
+      border-radius: 0 0 0 $borderRadius5;
+      font-size: 20px;
+      @include complexLinGradient(rgba(213,206,166,1), 0%, rgba(213,206,166,1), 0%,
+        rgba(229,229,215,1), 5%, rgba(213,206,166,1), 80%, rgba(122,104,34,1), 86%,
+        rgba(213,206,166,1), 93%, rgba(127,99,0,1), 100%, rgba(124,114,78,1), 100%);
+      a {
+        color: #000000 !important;
+        font-size: 1.4em;
+        text-align: left;
+        padding: 7px 0 13px 35%;
+        font-family: Marmelad, sans-serif;
+      }
+    }
+
+    li:hover {
+      @include complexLinGradient(rgba(213,206,166,1), 0%, rgba(213,206,166,1), 0%,
+        rgba(229,229,215,1), 5%, rgba(127,99,0,1), 92%, rgba(127,99,0,1), 92%,
+        rgba(244,244,244,1), 96%, rgba(127,99,0,1), 100%, rgba(183,183,183,1), 100%);
+      border-left: solid 1px #dddddd;
+      a {
+        color: #ffffff !important;
+      }
+    }
+
+    //custom active state of the main nav li items, controlled by the RootCtrl controller in Angular.js.
+    li.customActive a{
+      border-radius: 0 0 0 $borderRadius5;
+      @include complexLinGradient(rgba(213,206,166,1), 0%, rgba(213,206,166,1), 0%,
+        rgba(229,229,215,1), 5%, rgba(170,170,170,1), 80%, rgba(109,109,109,1), 87%,
+        rgba(244,244,244,1), 94%, rgba(127,99,0,1), 100%, rgba(183,183,183,1), 100%);
+      a{
+        font-size: 20px;
+        font-family: Marmelad, sans-serif;
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  .navbar-collapse{
+    width: 556px;
+    margin: 0 auto;
+  }
+}
+
+//**********************
+.sideMenu{
+  display: none;
+  height: 0;
+  margin-top: -25px;
+  .btn-block + .btn-block {/* over ride twitter Bootstrap, remove the margins bwn li demos*/
+    margin-top: 0px;
+    font-size: 1.4em;
+  }
+}
+
+
+
+.mainBlock{
+  background-color: #fbf7ed;
+  margin-bottom: 5px;
+  border-radius: $borderRadius5;
+}
+
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+//Gradients for the sidebar vertival menu, default background gradient.
+.btn-default {
+  font-family: 'Marmelad', sans-serif;
+  font-size: 1.4em;
+  @include linGradient(#7f6300, 0%, #ffffff, 9%, #7f6300, 20%, #ffffff, 91%, #7a5d00, 100%);
+}
+
+
+.btn-default:hover {
+  color: #000000;
+  border-style: solid;
+  @include linGradient(#d1d1d1, 0%, #d1d1d1, 1%, #7f7f7f, 14%, #f4f4f4, 88%, #596a72, 100%);
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .spinnerContainer{
+    left: 50%;
+  }
+
+  .currentPage{
+    display: none;
+  }
+  .logo{
+    width: 90%;
+    display: block;
+    max-width: 130px;
+    max-height: 130px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .demoMenu, .mobileMainMenu{
+    display: none;
+  }
+
+  .btn-default {
+    font-size: 15px;
+  }
+
+  .sideMenu{
+    display: block;
+    border: solid 1px $grayBorderBlend;
+    .btn-block + .btn-block {/* over ride twitter Bootstrap, remove the margins bwn li demos*/
+      margin-top: 3px;
+      font-size: 14px;
+    }
+  }
+
+
+  .horizontalNavBar {
+    margin-bottom: 6px;
+    .nav {
+      display: block;
+      width: 532px;
+      height: 43px;
+      position: relative;
+      overflow: visible;
+      border: none;
+      margin-left: -266px;
+      top: -3px;
+      left: 50%;
+      background: none;
+
+
+      li {
+        border-left: solid 1px #bababa;
+        width: 105px;
+        text-align: center;
+        border-radius: 0 0 0 $borderRadius5;
+        font-size: 20px;
+        font-family: Marmelad, sans-serif;
+        @include linGradient(rgba(238, 238, 238, 1), 0%, rgba(238, 238, 238, 1), 3%, #dedede, 14%, rgba(204, 204, 204, 1), 88%, rgba(204, 204, 204, 1), 100%);
+        a {
+          color: #000000 !important;
+          font-size: 1.1em;
+          text-align: center;
+          padding: 15px 10px;
+        }
+      }
+
+      li:hover{
+        @include linGradient(rgba(181, 189, 200, 1), 0%, rgb(224, 233, 244), 1%, rgba(130, 140, 149, 1), 36%, rgba(40, 52, 59, 1), 70%, rgba(40, 52, 59, 1), 100%);
+      }
+
+      li.customActive a{
+        @include complexLinGradient(rgba(213,206,166,1), 0%, rgba(213,206,166,1), 0%,
+          rgb(239, 231, 203), 10%, rgba(170,170,170,1), 80%, rgba(109,109,109,1), 87%,
+          rgba(244,244,244,1), 94%, rgba(127,99,0,1), 100%, rgba(183,183,183,1), 100%);
+      }
+
+
+      li.customActive:after, li.customActive:hover:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #7e6301;
+        position: absolute;
+        margin-left: 50%;
+        left: -10px;
+        margin-top: -1px;
+      }
+
+
+      li:last-child {
+        border-right: solid 1px #bababa;
+        border-radius: 0 0 $borderRadius5 0 !important;
+      }
+
+
+      li:hover:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid rgb(55, 67, 74);
+        position: absolute;
+        margin-left: 50%;
+        left: -10px;
+      }
+
+    }
+  }
+
+  .sideMenu{
+    display: block;
+    height: 760px;
+    background-color: $darkerGray;
+    margin-top: 0;
+    border-radius: $borderRadius5;
+    .vertActive{
+      color: #3938cb;
+      font-weight: bold;
+    }
+  }
+
+  .row .sideMenu{ /*Over riding the above rule */
+    padding: 15px;
+  }
+
+  //Give a responsive height to all the DOM containers in all the devices.
+  html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron{
+    height: 100%;
+  }
+  .mainBlock{
+    height: 85%; //.mainBlock,
+  }
+
+}
+
+
+@media screen and (max-width: 400px) {
+  .horizontalNavBar{
+    margin-bottom: 6px;
+  }
+  .spinnerContainer{
+    left: 40%;
+  }
+  .currentPage{
+    font-size: .8em;
+    top: 17px;
+  }
+}
+
+

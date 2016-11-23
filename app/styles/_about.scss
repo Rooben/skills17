@@ -1,0 +1,179 @@
+.about-styles {
+  %arr{
+    position: absolute;
+    top: 190px;
+    width: 40px;
+    height: 50px;
+    z-index: 80;
+    cursor: pointer;
+  }
+
+ .rightArr{
+   right: 0;
+   @extend %arr;
+  }
+  .leftArr{
+    left: 0;
+    @extend %arr;
+  }
+
+  .carosBox {
+    position: relative;
+    width: 580px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .caros {
+      position: relative;
+      width: 580px;
+      height: 500px;
+      margin: 0 auto;
+    }
+    .aboutMeText {
+      position: absolute;
+      font-family: 'Josefin Slab', serif;
+      color: #ffffff;
+      font-size: 1.7em;
+      font-style: italic;
+      font-weight: bold;
+      width: 75%;
+      top: 100px;
+      left: 10%;
+      text-shadow: 1px 1px #444444;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      width: 282px;
+      margin-left: -141px;
+      .captionText {
+        position: absolute;
+        top: -390px;
+        left: 25%;
+      }
+    }
+  }
+
+  .indicatorBox {
+    position: relative;
+    width: 282px;
+    bottom: 22px;
+    overflow: hidden;
+    margin: 0 auto;
+    ol li {
+      list-style-type: disc;
+      font-size: 50px;
+      float: left;
+      margin-left: 20px;
+      margin-right: 20px;
+      bottom: 20px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    .hollowDisk {
+      list-style-type: circle;
+    }
+  }
+  .emptyImg {
+    position: absolute;
+  }
+
+  .aboutImagesContainer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    .personalityImages {
+      position: relative;
+      border: solid 1px #cccccc;
+      width: 405px;
+      margin: 5px auto;
+      -webkit-box-shadow: -1px -10px 92px -9px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -1px -10px 92px -9px rgba(0, 0, 0, 0.75);
+      box-shadow: -1px -10px 92px -9px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+
+  @media screen and (max-width: 610px) {
+    .carosBox {
+      width: 100%;
+      .aboutMeText {
+        font-size: 1.4em;
+        width: 80%;
+      }
+      .caros {
+        width: 100%;
+        height: 480px;
+      }
+      .caroselDirection {
+        width: 40px;
+        height: 30px;
+        margin-top: 180px;
+      }
+    }
+
+    .aboutImagesContainer {
+      width: 100%;
+      #persImages{
+        width: 100%;
+      }
+      .personalityImages {
+        width: 100%;
+      }
+    }
+    .indicatorBox {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .carosBox {
+      width: 100%;
+      .aboutMeText {
+        font-size: 1.2em;
+        top: 40px;
+      }
+      .caros {
+        width: 100%;
+        height: 360px;
+      }
+      .caroselDirection {
+        width: 20px;
+        height: 15px;
+        margin-top: 100px;
+      }
+      .leftArr, .rightArr{
+        top: 130px;
+      }
+
+      .carousel-caption{
+        .captionText{
+          top: -285px;
+        }
+      }
+    }
+
+    .aboutImagesContainer {
+      width: 100%;
+      #persImages{
+        width: 100%;
+      }
+      .personalityImages {
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  /* Responsive: Portrait tablets and up */
+  @media screen and (min-width: 768px) {
+
+    .leftArr, .rightArr{
+      width: 75px;
+      height: 60px;
+    }
+  }
+
+}

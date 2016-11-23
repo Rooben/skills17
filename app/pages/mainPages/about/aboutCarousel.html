@@ -1,0 +1,39 @@
+<div >
+  <div  class="carosBox">
+    <img class="caros" ng-src="images/img1.jpg" alt="Carousel">
+
+
+    <!-- Left and right arrows -->
+    <div class="" ng-click="showQualities(-1)">
+      <img class="leftArr" ng-src="images/arrLeft.png"/>
+    </div>
+    <div class="" ng-click="showQualities(1)">
+      <img class="rightArr" ng-src="images/arrRight.png"/>
+    </div>
+
+    <div>
+
+      <div>
+        <ul class="aboutMeText">
+          <li ng-repeat="item in qualities">{{item}}</li>   <!-- Carousel's main text content -->
+        </ul>
+      </div>
+
+      <div class="carousel-caption">
+        <h3 class="captionText">{{qualityCategories[count]}}</h3>
+        <div class="indicatorBox">
+          <ol>
+            <li ng-repeat="disks in qualityCategories" ng-class="{hollowDisk: $index === titleNumber}" ng-click="loadText($index)"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div  class="aboutImagesContainer">
+    <div class="personalityImages">
+      <img id="persImages" ng-src="{{persImagesSource}}"/>
+    </div>
+  </div>
+</div>

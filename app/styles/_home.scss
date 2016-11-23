@@ -1,0 +1,90 @@
+.home-page {
+  .jumbotron {
+    margin-bottom: 0;
+    min-height: 760px;
+    text-align: center;
+    .homeAnimContainer {
+      border: solid 1px #b7b7b7;
+      width: 500px;
+      margin: 0 auto;
+      .welcomeHeader {
+        margin-bottom: 45px;
+      }
+      .homeText {
+        margin-top: 50px;
+      }
+      .animationContainer {
+        position: relative;
+        width: 475px;
+        margin: 0 auto;
+        .introText {
+          position: absolute;
+          font-size: 1.6em;
+          font-weight: bold;
+          left: 31px;
+          top: 38px;
+          color: #1765ac;
+          font-family: Marmelad, sans-serif;
+        }
+        .webtext {
+          position: absolute;
+          top: 99px;
+          left: 94px;
+          li {
+            color: #1765ac;
+            font-size: 0.2em;
+            font-family: "Arial Black", Gadget, sans-serif;
+            list-style-type: none;
+            font-weight: bold;
+            text-shadow: -1px 0 #ebf9fb, 0 1px #939b9b, 1px 0 #061346, 0 -1px #177cc9;
+          }
+        }
+      }
+    }
+  }
+
+
+   /* Responsive: Portrait tablets and up */
+   @media screen and (min-width: 768px) {
+      //Nothing in this large screen media query, everything is being inherited from the mobile above.
+   }
+
+  @media screen and (max-width: 545px) {
+    .jumbotron {
+      padding: 0 2px;
+      width: 100%;
+      .homeAnimContainer {
+        border: solid 1px #b7b7b7;
+        width: 100%;
+        .animationContainer {
+          width: 284px;
+          .textBoundBox {
+            top: 0;
+            position: absolute;
+            width: 284px;
+            height: 200px;
+            z-index: 20;
+            .introText{
+              position: absolute;
+              font-size: 1.2em;
+              bottom: 0;
+              top: 15px;
+              left: 15px;
+              height: 30px;
+            }
+            .webtext {
+              position: absolute;
+              top: 0;
+              left: 47px;
+              height: 45px;
+            }
+          }
+          .homeAnimationBG-image {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+ }
