@@ -52,9 +52,15 @@ html {
 
 
 //Give a responsive height to all the DOM containers in all the devices.
-html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron{
-  height: 100%;
+html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .about-styles{
+  min-height: 800px;
 }
+
+
+.aboutImagesContainer{
+  height: 250px;
+}
+
 .mainBlock{
   height: 85%; //.mainBlock,
 }
@@ -436,10 +442,8 @@ h1, h2, h3, h4, h5{
     padding: 15px;
   }
 
-  //Give a responsive height to all the DOM containers in all the devices.
-  html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron{
-    height: 100%;
-  }
+
+
   .mainBlock{
     height: 85%; //.mainBlock,
   }

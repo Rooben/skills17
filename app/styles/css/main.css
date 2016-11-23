@@ -14,8 +14,12 @@ html {
   padding: 0.2em 0;
 }
 
-html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron {
-  height: 100%;
+html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .about-styles {
+  min-height: 800px;
+}
+
+.aboutImagesContainer {
+  height: 250px;
 }
 
 .mainBlock {
@@ -460,9 +464,6 @@ h1, h2, h3, h4, h5 {
     /*Over riding the above rule */
     padding: 15px;
   }
-  html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .aboutImagesContainer, .about-styles, .jumbotron {
-    height: 100%;
-  }
   .mainBlock {
     height: 85%;
   }
@@ -487,8 +488,9 @@ h1, h2, h3, h4, h5 {
 
 .home-page .jumbotron {
   margin-bottom: 0;
-  min-height: 760px;
+  min-height: 660px;
   text-align: center;
+  height: 800px;
 }
 
 .home-page .jumbotron .homeAnimContainer {
