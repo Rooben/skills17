@@ -52,7 +52,32 @@
     .remaining{
       @extend %remaining;
     }
+    .error_msg{
+      position: absolute;
+      left: 156px;
+      top: 29px;
+      font-size: 12px;
+      display: none;
+    }
   }
+
+
+  .textarea-container{
+    border-top: solid 2px #DCDCDC;
+    border-bottom: solid 4px #DCDCDC;
+    min-height: 180px;
+    .remaining{
+      @extend %remaining;
+    }
+    .error_msg{
+      position: absolute;
+      left: 172px;
+      bottom: 102px;
+      font-size: 12px;
+      display: none;
+    }
+  }
+
 
   .contactDecor:before{
     content: "Contact Me";
@@ -128,14 +153,7 @@
     margin: 0;
   }
 
-  .textarea-container{
-    border-top: solid 2px #DCDCDC;
-    border-bottom: solid 4px #DCDCDC;
-    min-height: 180px;
-    .remaining{
-      @extend %remaining;
-    }
-  }
+
 
   #contactFrm{
     div.submit_reset_btn_container{

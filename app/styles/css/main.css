@@ -1188,6 +1188,28 @@ h1, h2, h3, h4, h5 {
   width: 270px;
 }
 
+.contactContainer .formItem .error_msg {
+  position: absolute;
+  left: 156px;
+  top: 29px;
+  font-size: 12px;
+  display: none;
+}
+
+.contactContainer .textarea-container {
+  border-top: solid 2px #DCDCDC;
+  border-bottom: solid 4px #DCDCDC;
+  min-height: 180px;
+}
+
+.contactContainer .textarea-container .error_msg {
+  position: absolute;
+  left: 172px;
+  bottom: 102px;
+  font-size: 12px;
+  display: none;
+}
+
 .contactContainer .contactDecor:before {
   content: "Contact Me";
   position: absolute;
@@ -1262,12 +1284,6 @@ h1, h2, h3, h4, h5 {
 .contactContainer .contactForm div, .contactContainer .contactForm label {
   padding: 4px 0;
   margin: 0;
-}
-
-.contactContainer .textarea-container {
-  border-top: solid 2px #DCDCDC;
-  border-bottom: solid 4px #DCDCDC;
-  min-height: 180px;
 }
 
 .contactContainer #contactFrm div.submit_reset_btn_container {

@@ -2,7 +2,6 @@
 
 var $ = require('jquery');
 var angular = require('angular');
-
 /**
  * @ngdoc function
  * @name rolandApp.controller:ContactCtrl
@@ -32,9 +31,45 @@ angular.module('mainPages.contact', [])
         var proceedValue;
 
         $(document).ready(function(){
+            var inputFieldsSet;
+            var textAreaField;
+            var emailFormat = 'bad';
             $('#feedbkLoader').hide();
             $('.remaining').hide();
+            $('#contact_submit').on("click", function(){
+                var input_flds = $('#contactFrm').find('input[required="true"]');
+                var textarea_fld = $('#contactFrm').find('textarea[required="true"]');
+                var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                inputFieldsSet = generalValidator.validateForm(input_flds);
+                textAreaField = generalValidator.validateForm(textarea_fld);
+
+                if(email_regex.test($('#con_email').val()) === false){
+                    $('.error_msg_email').css({color: 'red', display: 'inline-block'}).text('Please enter a valid email address.');
+                    emailFormat = 'bad';
+                }else{
+                    emailFormat = 'good';
+                }
+
+
+                if(
+                    inputFieldsSet.con_fname === true &&
+                    inputFieldsSet.con_lname === true &&
+                    inputFieldsSet.con_email === true &&
+                    textAreaField.con_message === true &&
+                    emailFormat === 'good'
+                ){
+                    //Ajax call will come in here, passing in all the input values and on success, display the following message.
+                    $('#feedbkText').text('Thanks. Your message has been processed.');
+                    $('#reset_form').trigger('click');
+                    $('.error_msg').text('').css('display', 'none');
+                }
+                else{return false;}
+            });
         });
+
+
+
+
 
 
         /*++++++++++++++++++++++++++++++++++++  FORM VALIDATION  ++++++++++++++++++++++++++++++++++++++*/
@@ -60,11 +95,12 @@ angular.module('mainPages.contact', [])
          * @params : param1(JQuery submit button id selector), param2(All required form fields must have "required" set to true and selected through the form id selector)
          * @params : param3(The third parameter is selector for the the text area if available)
          */
-        proceedValue = generalValidator.validateForm('#contact_submit', "#contactFrm input[required=true], #contactFrm textarea[required=true]");
+        proceedValue = generalValidator.validateForm('#contact_submit', 'input[required="true"]');   // #contactFrm textarea[required=true]
+
 
         //If the proceed value from the service is true, then proceed
 
-
+/*
 
         if(proceedValue){
             $("#feedbkLoader").show("slow"); //show the loader.
@@ -96,8 +132,10 @@ angular.module('mainPages.contact', [])
                 // $('#feedbkText').html("Sorry, your details can not be submitted now, due to maintenance. Please try later.");
                 $('#feedbkText').removeClass().addClass("neutral");
                 $('#feedbkText').html(data.e_msg); /* For Debuging only! */
-            });
+          /*  });
 
 
         } //End of if proceed
+
+        */
     }]);
