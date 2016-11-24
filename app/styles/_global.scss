@@ -1,6 +1,3 @@
-
-// bower:scss
-// endbower
 $lighterGray : #e2e3e7;
 $darkerGray: #D7D7D7;
 $grayBorderBlend: rgb(203, 203, 203);
@@ -8,31 +5,32 @@ $borderRadius5: 5px;
 $borderRadius7: 7px;
 $borderRadius10: 10px;
 
-// mixin for the caption text in the data tables in the skills pages.
+/* mixin for the caption text in the data tables in the skills pages.*/
 @mixin linGradient($color1, $percent1, $color2, $percent2, $color3, $percent3, $color4, $percent4, $color5, $percent5){
   background: $color1; /* Old browsers */
   background: -moz-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop($percent1, $color1), color-stop($percent2, $color2),
-    color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5)); /* Chrome,Safari4+ */
+          color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* IE10+ */
   background: linear-gradient(to bottom, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5); /* W3C */
-  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0); /* IE6-9 */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/ /* IE6-9 */
 }
 
-// Mixin for more complex linear gradients
+/* Mixin for more complex linear gradients */
 @mixin complexLinGradient($color1, $percent1, $color2, $percent2, $color3, $percent3, $color4, $percent4, $color5, $percent5, $color6, $percent6, $color7, $percent7, $color8, $percent8){
   background: $color1; /* Old browsers */
   background: -moz-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop($percent1, $color1), color-stop($percent2, $color2),
-    color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5), color-stop($percent6, $color6), color-stop($percent7, $color7), color-stop($percent8, $color8)); /* Chrome,Safari4+ */
+          color-stop($percent3, $color3), color-stop($percent4, $color4), color-stop($percent5, $color5), color-stop($percent6, $color6), color-stop($percent7, $color7), color-stop($percent8, $color8)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5, $color6 $percent6, $color7 $percent7, $color8 $percent8); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5,  $color6 $percent6, $color7 $percent7, $color8 $percent8); /* IE10+ */
   background: linear-gradient(to bottom, $color1 $percent1, $color2 $percent2, $color3 $percent3, $color4 $percent4, $color5 $percent5,  $color6 $percent6, $color7 $percent7, $color8 $percent8); /* W3C */
-  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0); /* IE6-9 */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/ /* IE6-9 */
 }
+
 
 
 /* apply a natural box layout model to all elements, but allowing components to change */

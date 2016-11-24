@@ -63,18 +63,14 @@ gulp.task('browserify-client', function() {
 });
 */
 
-gulp.task('deploy-js', function() {
-  return gulp.src('./app/pages/app.js')
-      .pipe(browserify({
-        insertGlobals: true
-      }))
-      //.pipe(uglify())
-      .pipe(rename('bundle.min.js'))
-      .pipe(gulp.dest('./dist/js'));
+
+// Clear the dist directory only with "gulp clean-dist"
+gulp.task('clean-dist', function() {
+  return gulp.src("dist/*", {read: false}).pipe(clear());
 });
 
-
-gulp.task('deploy-css', function () {
+// Build the dist directory by copying files and folders in to it, but run clean-dist before that.
+gulp.task('deploy', ['clean-dist'],  function(){
   var input = './app/styles/main.scss';
   var output = './dist/styles/css';
 
@@ -82,28 +78,36 @@ gulp.task('deploy-css', function () {
     errLogToConsole: true,
     outputStyle: 'compressed'
   };
-  return gulp
+
+  // Deploy javascript --------------------------------------
+  gulp.src('./app/pages/app.js')
+  .pipe(browserify({
+    insertGlobals: true
+  }))
+  //.pipe(uglify())
+  .pipe(rename('bundle.min.js'))
+  .pipe(gulp.dest('./dist/js'));
+  // Deploy css -----------------------------------------------
   // Find all `.scss` files from the `stylesheets/` folder
-      .src(input)
-      // Run Sass on those files
-      .pipe(sass())
-      .pipe(sass(sassOptions).on('error', sass.logError))
-      //    .pipe(sourcemaps.write('./app/styles/source_maps'))
-      .pipe(autoprefixer())
-      // Write the resulting CSS in the output folder
-      .pipe(gulp.dest(output));
-});
-
-
-gulp.task('deploy-images', function(){
+  gulp.src(input)
+  // Run Sass on those files
+  .pipe(sass())
+  .pipe(sass(sassOptions).on('error', sass.logError))
+  //    .pipe(sourcemaps.write('./app/styles/source_maps'))
+  .pipe(autoprefixer())
+  // Write the resulting CSS in the output folder
+  .pipe(gulp.dest(output));
+  // Deploy images -------------------------------------------
   gulp.src('./app/images/**/*.{jpg,png}')
       .pipe(gulp.dest('./dist/images'));
-});
-
-
-
-
-gulp.task('deploy-others', function(){
+  // Deploy html ----------------------------------------------
+  gulp.src('./app/**/*.html')
+      .pipe(gulp.dest('dist'));
+  gulp.src('./app/index.html')
+      .pipe(gulp.dest('./dist'));
+  gulp.src('./app/404.html')
+      .pipe(gulp.dest('./dist'));
+  // Deploy others -------------------------------------------
   gulp.src('./app/pages/heartcode-canvasloader-min-0.9.1.js')
       .pipe(gulp.dest('dist/pages'));
   gulp.src('./app/pages/thirdParties/css3-mediaqueries.js')
@@ -112,27 +116,11 @@ gulp.task('deploy-others', function(){
       .pipe(gulp.dest('./dist'));
   gulp.src('./app/pages/mainPages/contact/verify.php')
       .pipe(gulp.dest('./dist/pages/mainPages/contact/'));
-});
-
-gulp.task('deploy-html', function(){
-  gulp.src('./app/**/*.html')
-      .pipe(gulp.dest('dist'));
-  gulp.src('./app/index.html')
-      .pipe(gulp.dest('./dist'));
-  gulp.src('./app/404.html')
-      .pipe(gulp.dest('./dist'));
+  // End of deployment ---------------------------------------
 });
 
 
-// Clear the dist directory first with "gulp clean-dist"
-gulp.task('clean-dist', function() {
-  return gulp.src("dist/*", {read: false}).pipe(clear());
-});
-
-// After you have cleaned the dist directory, you now run gulp deploy to load the new contents
-gulp.task('deploy', ['deploy-js', 'deploy-css', 'deploy-images', 'deploy-html', 'deploy-others']);
-
-
+ // Minify the javascript code and put it in the app/js directory
 gulp.task('uglify', ['browserify-client'], function() {
   return gulp.src('./app/bundle.js')
     //.pipe(uglify())

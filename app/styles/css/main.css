@@ -1,3 +1,5 @@
+/* mixin for the caption text in the data tables in the skills pages.*/
+/* Mixin for more complex linear gradients */
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -83,6 +85,8 @@ body {
   /* IE10+ */
   background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 14%, #cccccc 88%, #cccccc 91%, #cccccc 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .container-narrow > hr {
@@ -150,6 +154,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 14%, #cccccc 88%, #cccccc 91%, #cccccc 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .horizontalNavBar .mobileMainMenu {
@@ -210,6 +216,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #d5cea6 0%, #d5cea6 0%, #e5e5d7 5%, #d5cea6 80%, #7a6822 86%, #d5cea6 93%, #7f6300 100%, #7c724e 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .horizontalNavBar .nav li a {
@@ -232,6 +240,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #d5cea6 0%, #d5cea6 0%, #e5e5d7 5%, #7f6300 92%, #7f6300 92%, #f4f4f4 96%, #7f6300 100%, #b7b7b7 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
   border-left: solid 1px #dddddd;
 }
 
@@ -252,6 +262,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #d5cea6 0%, #d5cea6 0%, #e5e5d7 5%, #aaaaaa 80%, #6d6d6d 87%, #f4f4f4 94%, #7f6300 100%, #b7b7b7 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .horizontalNavBar .nav li.customActive a a {
@@ -307,6 +319,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #7f6300 0%, #ffffff 9%, #7f6300 20%, #ffffff 91%, #7a5d00 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .btn-default:hover {
@@ -323,6 +337,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #d1d1d1 0%, #d1d1d1 1%, #7f7f7f 14%, #f4f4f4 88%, #596a72 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 /* Responsive: Portrait tablets and up */
@@ -389,6 +405,8 @@ h1, h2, h3, h4, h5 {
     /* IE10+ */
     background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 3%, #dedede 14%, #cccccc 88%, #cccccc 100%);
     /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+    /* IE6-9 */
   }
   .horizontalNavBar .nav li a {
     color: #000000 !important;
@@ -408,6 +426,8 @@ h1, h2, h3, h4, h5 {
     /* IE10+ */
     background: linear-gradient(to bottom, #b5bdc8 0%, #e0e9f4 1%, #828c95 36%, #28343b 70%, #28343b 100%);
     /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+    /* IE6-9 */
   }
   .horizontalNavBar .nav li.customActive a {
     background: #d5cea6;
@@ -421,6 +441,8 @@ h1, h2, h3, h4, h5 {
     /* IE10+ */
     background: linear-gradient(to bottom, #d5cea6 0%, #d5cea6 0%, #efe7cb 10%, #aaaaaa 80%, #6d6d6d 87%, #f4f4f4 94%, #7f6300 100%, #b7b7b7 100%);
     /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'$color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+    /* IE6-9 */
   }
   .horizontalNavBar .nav li.customActive:after, .horizontalNavBar .nav li.customActive:hover:after {
     content: "";
@@ -775,6 +797,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #d1d1d1 0%, #7f7f7f 14%, #f4f4f4 88%, #ffffff 91%, #596a72 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles .skillsAccordion {
@@ -793,6 +817,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 5%, #eeeeee 10%, #cccccc 90%, #cccccc 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles .panel-primary > .panel-heading {
@@ -859,6 +885,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #7f6300 0%, #ffffff 9%, #7f6300 20%, #ffffff 91%, #7a5d00 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles table.demoTable {
@@ -886,6 +914,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #e1ffff 7%, #e1ffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles table.demoTable td, .skills-styles table.demoTable2 td {
@@ -904,6 +934,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #f2f5f6 0%, #c8d7dc 68%, #c8d7dc 80%, #c8d7dc 90%, #c8d7dc 40%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles table.demoTable2 th {
@@ -922,6 +954,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #f72f0c 0%, #eaa39d 14%, #e5aea9 74%, #e5aea9 83%, #f02f17 95%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .skills-styles .contents_explanation2 {
@@ -1037,6 +1071,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 14%, #cccccc 88%, #cccccc 91%, #cccccc 100%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .projects-page [class*="badger"]:hover {
@@ -1051,6 +1087,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #7f6300 0%, #ffffff 1%, #ffffff 1%, #7f6300 90%, #7a5d00 60%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
   cursor: pointer;
 }
 
@@ -1119,6 +1157,19 @@ h1, h2, h3, h4, h5 {
   height: 80%;
 }
 
+.contactContainer .formItem .remaining, .contactContainer .textarea-container .remaining {
+  font-family: Marmelad, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 1px;
+  border: solid 1px #8b8b8b;
+  background-color: #f9f6ec;
+}
+
+.contactContainer .formItem:first-child {
+  border-top: solid 2px #DCDCDC;
+}
+
 .contactContainer .formItem {
   position: relative;
   padding: 2px 0;
@@ -1128,20 +1179,13 @@ h1, h2, h3, h4, h5 {
 
 .contactContainer .formItem input {
   position: absolute;
-  right: 0px;
-  top: 0;
+  right: 0;
+  top: -4px;
   max-width: 240px;
-  padding: 20px 4px;
+  padding: 10px 4px;
   margin-top: 2px;
-}
-
-.contactContainer .formItem .remaining {
-  font-family: Marmelad, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  border-radius: 3px;
-  padding: 1px;
-  border: solid 1px #8b8b8b;
-  background-color: #f9f6ec;
+  border-radius: 5px;
+  width: 270px;
 }
 
 .contactContainer .contactDecor:before {
@@ -1220,15 +1264,28 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
+.contactContainer .textarea-container {
+  border-top: solid 2px #DCDCDC;
+  border-bottom: solid 4px #DCDCDC;
+  min-height: 180px;
+}
+
+.contactContainer #contactFrm div.submit_reset_btn_container {
+  padding-top: 20px;
+}
+
 .contactContainer .contactForm textarea {
   padding: 10px;
   margin-bottom: 4px;
+  float: right;
+  width: 270px;
 }
 
 .contactContainer .contactForm input, .contactContainer .contactForm textarea {
   color: #000000;
   font-size: 1.3em;
   font-weight: bold;
+  border: solid 1px #ccc;
   background: #eeeeee;
   /* Old browsers */
   /* FF3.6+ */
@@ -1240,6 +1297,8 @@ h1, h2, h3, h4, h5 {
   /* IE10+ */
   background: linear-gradient(to bottom, #eeeeee 8%, #cccccc 10%, #f2f2f2 87%, #f2f2f2 90%, #cccccc 95%);
   /* W3C */
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"'+ $color1 +'"', endColorstr='"'+ $color5 +'"', GradientType=0);*/
+  /* IE6-9 */
 }
 
 .contactContainer .spamControl {
