@@ -780,7 +780,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .skills-styles .highcharts-container {
-  overflow: visible !important;
+  overflow-y: scroll !important;
+  padding: 20px 0;
 }
 
 .skills-styles .btn-default:hover {

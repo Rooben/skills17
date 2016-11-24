@@ -13,7 +13,7 @@ module.exports = function(){
     restrict: 'EA',
     replace: true,
     scope: {},
-    template: '<div id="pieChartContainer" style="margin: 0 auto">not working</div>',
+    template: '<div id="pieChartContainer" style="margin: 0 auto;">not working</div>',
     link: function () {
       var data2 = [['Shiraz', 5], ['Sauvignon', 10], ['Pinot', 20],
         ['Malbec', 5], ['Chardonnay', 28], ['Cabernet', 23], ['Merlot', 9]];
@@ -60,8 +60,7 @@ module.exports = function(){
           dataLabels: {
             enabled: true,
             color: '#bbbbbb',
-            connectorColor: '#bbbbbb',
-            format: '{point.name}: <b>{point.y}%</div></b>'
+            connectorColor: '#bbbbbb'
           }
         }],
         credits: {

@@ -1,6 +1,7 @@
 .skills-styles {
   .highcharts-container{
-    overflow: visible !important;
+    overflow-y: scroll !important;
+    padding: 20px 0;
   }
   .btn-default:hover {
     color: #000000;
