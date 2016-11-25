@@ -8,7 +8,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var clear = require('gulp-rimraf');
-
+var ngAnnotate = require('gulp-ng-annotate');
 
 
 gulp.task('styles', function () {
@@ -44,13 +44,24 @@ gulp.task('lint-test', function() {
     .pipe(jshint.reporter('default'));
 });
 
+
+// Minify the javascript code and put it in the app/js directory
+gulp.task('uglify', ['browserify-client'], function() {
+  return gulp.src('./app/bundle.js')
+      .pipe(ngAnnotate())
+      //.pipe(uglify())
+      .pipe(rename('bundle.min.js'))
+      .pipe(gulp.dest('./app/js'));
+});
+
+
 gulp.task('browserify-client', function() {
   return gulp.src('./app/pages/app.js')
     .pipe(browserify({
       insertGlobals: true
     }))
-    .pipe(rename('bundle.min.js'))
-    .pipe(gulp.dest('./app/js'));
+    .pipe(rename('bundle.js'))
+    .pipe(gulp.dest('./app'));
 });
 
 /*gulp.task('browserify-test', ['lint-test'], function() {
@@ -71,62 +82,67 @@ gulp.task('clean-dist', function() {
 
 // Build the dist directory by copying files and folders in to it, but run clean-dist before that.
 gulp.task('deploy', ['clean-dist'],  function(){
-  var input = './app/styles/main.scss';
-  var output = './dist/styles/css';
+  // START of deployment ------------------ declare variables
+        var input = './app/styles/main.scss';
+        var output = './dist/styles/css';
 
-  var sassOptions = {
-    errLogToConsole: true,
-    outputStyle: 'compressed'
-  };
+        var sassOptions = {
+          errLogToConsole: true,
+          outputStyle: 'compressed'
+        };
 
   // Deploy javascript --------------------------------------
-  gulp.src('./app/pages/app.js')
-  .pipe(browserify({
-    insertGlobals: true
-  }))
-  //.pipe(uglify())
-  .pipe(rename('bundle.min.js'))
-  .pipe(gulp.dest('./dist/js'));
+        gulp.src('./app/pages/app.js')
+        .pipe(browserify({
+          insertGlobals: true
+        }))
+        .pipe(rename('bundle.js'))
+        .pipe(gulp.dest('./app'));
+        //------------------ minify and rename
+        gulp.src('./app/bundle.js')
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(rename('bundle.min.js'))
+        .pipe(gulp.dest('./dist/js'));
+
   // Deploy css -----------------------------------------------
-  // Find all `.scss` files from the `stylesheets/` folder
-  gulp.src(input)
-  // Run Sass on those files
-  .pipe(sass())
-  .pipe(sass(sassOptions).on('error', sass.logError))
-  //    .pipe(sourcemaps.write('./app/styles/source_maps'))
-  .pipe(autoprefixer())
-  // Write the resulting CSS in the output folder
-  .pipe(gulp.dest(output));
+        // Find all `.scss` files from the `stylesheets/` folder
+        gulp.src(input)
+        // Run Sass on those files
+        .pipe(sass())
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        //    .pipe(sourcemaps.write('./app/styles/source_maps'))
+        .pipe(autoprefixer())
+        // Write the resulting CSS in the output folder
+        .pipe(gulp.dest(output));
+
   // Deploy images -------------------------------------------
-  gulp.src('./app/images/**/*.{jpg,png}')
-      .pipe(gulp.dest('./dist/images'));
+        gulp.src('./app/images/**/*.{jpg,png}')
+            .pipe(gulp.dest('./dist/images'));
+
   // Deploy html ----------------------------------------------
-  gulp.src('./app/**/*.html')
-      .pipe(gulp.dest('dist'));
-  gulp.src('./app/index.html')
-      .pipe(gulp.dest('./dist'));
-  gulp.src('./app/404.html')
-      .pipe(gulp.dest('./dist'));
+        gulp.src('./app/**/*.html')
+            .pipe(gulp.dest('dist'));
+        gulp.src('./app/index.html')
+            .pipe(gulp.dest('./dist'));
+        gulp.src('./app/404.html')
+            .pipe(gulp.dest('./dist'));
+
   // Deploy others -------------------------------------------
-  gulp.src('./app/pages/heartcode-canvasloader-min-0.9.1.js')
-      .pipe(gulp.dest('dist/pages'));
-  gulp.src('./app/pages/thirdParties/css3-mediaqueries.js')
-      .pipe(gulp.dest('./dist/pages/thirdParties'));
-  gulp.src('./app/404.html')
-      .pipe(gulp.dest('./dist'));
-  gulp.src('./app/pages/mainPages/contact/verify.php')
-      .pipe(gulp.dest('./dist/pages/mainPages/contact/'));
-  // End of deployment ---------------------------------------
+        gulp.src('./app/pages/heartcode-canvasloader-min-0.9.1.js')
+            .pipe(gulp.dest('dist/pages'));
+        gulp.src('./app/pages/thirdParties/css3-mediaqueries.js')
+            .pipe(gulp.dest('./dist/pages/thirdParties'));
+        gulp.src('./app/404.html')
+            .pipe(gulp.dest('./dist'));
+        gulp.src('./app/pages/mainPages/contact/verify.php')
+            .pipe(gulp.dest('./dist/pages/mainPages/contact/'));
+
+    // End of deployment ---------------------------------------
 });
 
 
- // Minify the javascript code and put it in the app/js directory
-gulp.task('uglify', ['browserify-client'], function() {
-  return gulp.src('./app/bundle.js')
-    //.pipe(uglify())
-    .pipe(rename('bundle.min.js'))
-    .pipe(gulp.dest('./app/js'));
-});
+
 
 gulp.task('build', ['uglify', 'minify']);
 
