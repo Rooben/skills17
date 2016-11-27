@@ -8,6 +8,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var clear = require('gulp-rimraf');
 var ngAnnotate = require('gulp-ng-annotate');
+var rev = require('gulp-rev');
 
 
 gulp.task('styles', function () {
@@ -101,6 +102,7 @@ gulp.task('deploy', ['clean-dist'],  function(){
         .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(rename('bundle.min.js'))
+        .pipe(rev())// versioning, prevents hard caching of files
         .pipe(gulp.dest('./dist/js'));
 
   // Deploy css -----------------------------------------------
@@ -111,29 +113,37 @@ gulp.task('deploy', ['clean-dist'],  function(){
         .pipe(sass(sassOptions).on('error', sass.logError))
         //    .pipe(sourcemaps.write('./app/styles/source_maps'))
         .pipe(autoprefixer())
-        // Write the resulting CSS in the output folder
-        .pipe(gulp.dest(output));
+        .pipe(rev())// versioning, prevents hard caching of files
+        .pipe(gulp.dest(output));// Write the resulting CSS in the output folder
 
   // Deploy images -------------------------------------------
         gulp.src('./app/images/**/*.{jpg,png}')
+            .pipe(rev())// versioning, prevents hard caching of files
             .pipe(gulp.dest('./dist/images'));
 
   // Deploy html ----------------------------------------------
         gulp.src('./app/**/*.html')
+            .pipe(rev())
             .pipe(gulp.dest('dist'));
         gulp.src('./app/index.html')
+            .pipe(rev())
             .pipe(gulp.dest('./dist'));
         gulp.src('./app/404.html')
+            .pipe(rev())
             .pipe(gulp.dest('./dist'));
 
   // Deploy others -------------------------------------------
         gulp.src('./app/pages/heartcode-canvasloader-min-0.9.1.js')
+            .pipe(rev())
             .pipe(gulp.dest('dist/pages'));
         gulp.src('./app/pages/thirdParties/css3-mediaqueries.js')
+            .pipe(rev())
             .pipe(gulp.dest('./dist/pages/thirdParties'));
         gulp.src('./app/404.html')
+            .pipe(rev())
             .pipe(gulp.dest('./dist'));
         gulp.src('./app/pages/mainPages/contact/verify.php')
+            .pipe(rev())
             .pipe(gulp.dest('./dist/pages/mainPages/contact/'));
 
     // End of deployment ---------------------------------------
