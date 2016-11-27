@@ -239,4 +239,9 @@
     }
   }
 
+  @media screen and (max-width: 768px) {
+    div.textarea-container{
+      border-bottom: none;
+    }
+  }
 }

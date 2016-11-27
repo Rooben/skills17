@@ -1373,3 +1373,9 @@ h1, h2, h3, h4, h5 {
     width: 50%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .contactContainer div.textarea-container {
+    border-bottom: none;
+  }
+}
