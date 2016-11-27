@@ -462,4 +462,9 @@ h1, h2, h3, h4, h5{
   }
 }
 
+@media screen and (max-width: 768px) {
+  html, body, .container, .mainDisplay, .sideMenu, .uiViewWindow, .home-page, .about-styles {
+    min-height: 0;
+  }
+}
 

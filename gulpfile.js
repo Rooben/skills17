@@ -4,7 +4,6 @@ var rename = require('gulp-rename');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
-//var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var clear = require('gulp-rimraf');
@@ -26,7 +25,6 @@ gulp.task('styles', function () {
       // Run Sass on those files
       .pipe(sass())
       .pipe(sass(sassOptions).on('error', sass.logError))
-//    .pipe(sourcemaps.write('./app/styles/source_maps'))
       .pipe(autoprefixer())
       // Write the resulting CSS in the output folder
       .pipe(gulp.dest(output));
