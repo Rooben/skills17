@@ -4,7 +4,7 @@ var angular = require('angular');
 
 
 /**
- * @ngdoc function
+ * @ngdoc module
  * @name rolandApp.controller:AboutCtrl
  * @description
  * # AboutCtrl

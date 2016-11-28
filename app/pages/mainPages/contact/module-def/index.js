@@ -30,7 +30,7 @@ angular.module('mainPages.contact', [])
     .controller('ContactCtrl', ['$scope', 'generalValidator', function ($scope, generalValidator) {
         var proceedValue;
 
-        $(document).ready(function(){
+        angular.element(document).ready(function(){
             var inputFieldsSet;
             var textAreaField;
             var emailFormat = 'bad';

@@ -2,9 +2,7 @@
 /**
  * @ngdoc function
  * @name rolandApp.mainPages:carouselAbout directive
- * @description
- * # carouselAbout directive
- * A directive of the rolandApp
+ * @description:  A Carousel logic directive
  */
 module.exports = function(carouselData, myGsapFromTo) {
   return {
